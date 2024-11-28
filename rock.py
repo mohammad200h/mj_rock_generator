@@ -32,12 +32,10 @@ def apply_texture(texture, voronoi_grid, mesh):
 
   # Create a new mesh with displaced vertices
   deformed_mesh = pv.PolyData(new_points, mesh.faces)
-
   # Smooth the mesh to create a more natural rock shape
-  smoothed_sphere = deformed_mesh.smooth(n_iter=50, relaxation_factor=0.2)
+  smoothed_mesh = deformed_mesh.smooth(n_iter=50, relaxation_factor=0.2)
 
-  return smoothed_sphere
-
+  return deformed_mesh,smoothed_mesh
 
 def rock(base_shape="sphere",subdivide=2,subfilter="loop",
          scale=[1.0, 0.2, 0.5],voronoi_grid=100):
@@ -90,6 +88,14 @@ def rock(base_shape="sphere",subdivide=2,subfilter="loop",
 if __name__ == "__main__":
   rock = rock(base_shape="sphere",scale=[1.0, 0.8, 0.5],subdivide=4)
 
+  print(f"rock::{rock}")
+  print(f"rock::vertices::{rock.points}")
+
+  # rock.faces = [n_points_in_face, vertex1, vertex2, ..., vertex_n, ...]
+  slice = rock.faces[0]
+  faces = rock.faces[1:]
+
+  print(f"rock::faces::{faces}")
 
   # Visualize the rock-like shape
   plotter = pv.Plotter()
