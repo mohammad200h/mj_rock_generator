@@ -4,11 +4,11 @@ from scipy.spatial import distance
 import pyvista as pv
 
 
-def voronoi3d():
+def voronoi3d(grid_size = 100,num_points = 10 ):
 
   # Define grid dimensions
-  grid_size = 100  # Define 3D grid size (100x100x100)
-  num_points = 10  # Number of Voronoi seeds
+  # grid_size = 100  # Define 3D grid size (100x100x100)
+  # num_points = 10  # Number of Voronoi seeds
 
   # Generate random 3D seed points
   seeds = np.random.rand(num_points, 3) * grid_size  # Scale to grid size
