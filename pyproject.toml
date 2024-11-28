@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "mj-rock-generator"
+version = "0.1.0"
+description = ""
+authors = ["Mohammad Hamid <mohammad200h@hotmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+pyvista = "^0.44.2"
+scipy = "^1.14.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
