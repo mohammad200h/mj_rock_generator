@@ -9,7 +9,7 @@ setup(
     author="Mohammad Hamid",
     license="MIT",
     install_requires=[
-        "numpy>=1.15"
+        "numpy>=1.15",
         "pyvista==0.44.2"
     ],
     zip_safe=False
