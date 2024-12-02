@@ -1,4 +1,4 @@
-from rock_model import Rock
+from rock_model import rock_model
 from arena import Arena
 
 import tempfile
@@ -22,7 +22,7 @@ if __name__ =="__main__":
     print(f"temp_file_path::{temp_file_path}")
 
     arena = Arena()
-    rock = Rock(temp_file_path,smooth=True)
+    rock,_ = rock_model(temp_file_path,smooth_rock  =True)
 
     arena.add_movable_asset(rock,[0,0,0.23])
 

@@ -34,13 +34,13 @@ class Arena:
 
   def add_movable_asset(self,asset,pos=[0,0,0],prefix='_'):
     frame = self.model.add_frame(pos=pos)
-    body = frame.attach_body(asset.model,  prefix,'')
+    body = frame.attach_body(asset,  prefix,'')
     body.add_freejoint()
     return body
 
   def add_fixed_asset(self,asset,pos=[0,0,0],prefix='_'):
     frame = self.model.add_frame(pos=pos)
-    body = frame.attach_body(asset.model,  prefix,'')
+    body = frame.attach_body(asset,  prefix,'')
     return body
 
   def remove_asset(self,body):
