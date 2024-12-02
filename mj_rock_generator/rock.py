@@ -1,5 +1,5 @@
 import pyvista as pv
-from voronoi import voronoi3d
+from .voronoi import voronoi3d
 
 import numpy as np
 
